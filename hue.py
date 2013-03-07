@@ -77,7 +77,7 @@ class Hue:
                     "http://%s/api/%s/%s" % (self.ip_address, self.api_key, endpoint),
                     data=data,
                     timeout=1.0)
-            return r.json
+            return r.json()
         except requests.exceptions.Timeout:
             print "API timeout: %s" % datetime.utcnow()
             return None
